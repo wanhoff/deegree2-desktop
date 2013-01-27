@@ -140,7 +140,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.deegree.desktop.main.Desktop</mainClass>
+              <mainClass>org.deegree.desktop.main.DeegreeDesktop</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -194,7 +194,7 @@
               <outfile>target/deegreeDesktop.exe</outfile>
               <errTitle />
               <classPath>
-                <mainClass>org.deegree.desktop.main.Desktop</mainClass>
+                <mainClass>org.deegree.desktop.main.DeegreeDesktop</mainClass>
                 <jarLocation>lib/</jarLocation>
               </classPath>
               <jre>
@@ -286,8 +286,8 @@
               <repositoryLayout>flat</repositoryLayout>
               <programs>
                 <program>
-                  <mainClass>org.deegree.desktop.main.Desktop</mainClass>
-                  <name>iGeoDesktop</name>
+                  <mainClass>org.deegree.desktop.main.DeegreeDesktop</mainClass>
+                  <name>deegreeDesktop</name>
                 </program>
               </programs>
               <binFileExtensions>
@@ -330,7 +330,7 @@
                   <tasks>
                     <chmod perm="+x">
                       <fileset dir="target/appassembler/bin">
-                        <include name="iGeoDesktop.*" />
+                        <include name="deegreeDesktop.*" />
                       </fileset>
                     </chmod>
                   </tasks>
