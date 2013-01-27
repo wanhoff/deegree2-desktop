@@ -41,8 +41,8 @@ import java.util.List;
 
 import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.spi.LoggingEvent;
+import org.deegree.desktop.views.swing.monitor.LoggerWindow;
 import org.deegree.framework.util.TimeTools;
-import org.deegree.igeo.views.swing.monitor.LoggerWindow;
 
 /**
  * TODO add class documentation here
