@@ -52,7 +52,7 @@ import javax.xml.parsers.DocumentBuilder;
 
 import org.deegree.desktop.ApplicationContainer;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
@@ -87,7 +87,7 @@ public class SldIO {
     public static void exportSld( String sld, ApplicationContainer<?> appContainer, Component parent ) {
 
         File file = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.local, appContainer, parent, prefs, "sld",
-                                                       IGeoFileFilter.XML );
+                                                       DesktopFileFilter.XML );
         if ( file != null ) {
             if ( file.getParent() != null ) {
                 prefs.put( "sld" + getVersionNumber(), file.getParent() );
@@ -128,7 +128,7 @@ public class SldIO {
      */
     public static File importSld( ApplicationContainer<?> appContainer, Component parent ) {
         return GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.local, appContainer, parent, prefs, "sld",
-                                                  IGeoFileFilter.XML );
+                                                  DesktopFileFilter.XML );
 
     }
 }

@@ -56,7 +56,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.desktop.views.swing.util.panels.PanelDialog.OkCheck;
 import org.deegree.framework.log.ILogger;
@@ -155,19 +155,19 @@ public class TemplatePanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent e ) {
         JTextField field = null;
         String key = null;
-        IGeoFileFilter[] filters = null;
+        DesktopFileFilter[] filters = null;
 
         if ( e.getSource() == browseTempl ) {
             field = templateLocation;
             key = "lastTemplate";
-            filters = new IGeoFileFilter[] { IGeoFileFilter.JASPER };
+            filters = new DesktopFileFilter[] { DesktopFileFilter.JASPER };
         }
 
         if ( e.getSource() == browseImg ) {
             field = imageLocation;
             key = "lastImage";
-            filters = new IGeoFileFilter[] { IGeoFileFilter.TIFF, IGeoFileFilter.GIF, IGeoFileFilter.BMP,
-                                            IGeoFileFilter.PNG, IGeoFileFilter.JPEG, IGeoFileFilter.IMAGES };
+            filters = new DesktopFileFilter[] { DesktopFileFilter.TIFF, DesktopFileFilter.GIF, DesktopFileFilter.BMP,
+                                            DesktopFileFilter.PNG, DesktopFileFilter.JPEG, DesktopFileFilter.IMAGES };
         }
 
         if ( field != null ) {

@@ -44,7 +44,7 @@ import static java.util.prefs.Preferences.userNodeForPackage;
 import static org.deegree.desktop.Version.getVersionNumber;
 import static org.deegree.desktop.i18n.Messages.get;
 import static org.deegree.desktop.views.DialogFactory.openErrorDialog;
-import static org.deegree.desktop.views.swing.util.IGeoFileFilter.GPX;
+import static org.deegree.desktop.views.swing.util.DesktopFileFilter.GPX;
 import static org.deegree.framework.log.LoggerFactory.getLogger;
 
 import java.awt.Container;

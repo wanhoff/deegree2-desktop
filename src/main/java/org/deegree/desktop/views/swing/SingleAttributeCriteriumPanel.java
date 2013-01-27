@@ -237,7 +237,7 @@ class SingleAttributeCriteriumPanel extends JPanel {
         JLabel valueLabel = new JLabel( Messages.getMessage( Locale.getDefault(), "$MD10154" ) );
         valueLabel.setPreferredSize( new Dimension( 75, 18 ) );
 
-        URL iconUrl = SingleAttributeCriteriumPanel.class.getResource( "/org/deegree/igeo/views/images/case_sensitive.png" );
+        URL iconUrl = SingleAttributeCriteriumPanel.class.getResource( "/org/deegree/desktop/views/images/case_sensitive.png" );
         Icon icon = new ImageIcon( iconUrl );
         JLabel caseSensitiveLabel = new JLabel( icon );
         caseSensitiveLabel.setToolTipText( Messages.getMessage( Locale.getDefault(), "$MD11006" ) );

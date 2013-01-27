@@ -64,7 +64,7 @@ import org.deegree.desktop.mapmodel.MapModelChangedEvent;
 import org.deegree.desktop.mapmodel.MapModelVisitor;
 import org.deegree.desktop.views.swing.DefaultPanel;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
@@ -147,7 +147,7 @@ public class LegendPanel extends DefaultPanel implements ChangeListener, MapMode
                                                                        appContainer,
                                                                        LegendPanel.this,
                                                                        Preferences.systemNodeForPackage( LegendPanel.class ),
-                                                                       "LOCATION", IGeoFileFilter.IMAGES );
+                                                                       "LOCATION", DesktopFileFilter.IMAGES );
                         if ( file != null ) {
                             try {
                                 BufferedImage img = ImageUtils.loadImage( file );

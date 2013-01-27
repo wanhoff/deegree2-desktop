@@ -78,7 +78,7 @@ import org.deegree.desktop.views.DialogFactory;
 import org.deegree.desktop.views.HelpManager;
 import org.deegree.desktop.views.swing.HelpFrame;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.IconRegistry;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
@@ -224,7 +224,7 @@ public class BookmarkPanel extends javax.swing.JPanel {
 		                Preferences prefs = Preferences.userNodeForPackage( BookmarkPanel.class );
 		                File file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.externalResource,
 		                                                               appCont, BookmarkPanel.this, prefs,
-		                                                               "bookmark file", IGeoFileFilter.XML );
+		                                                               "bookmark file", DesktopFileFilter.XML );
 		                FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
 		                FileSystemAccess fsa = fsaf.getFileSystemAccess( FILECHOOSERTYPE.externalResource );
 		                fsa.getFileURL( file.getAbsolutePath() );
@@ -251,7 +251,7 @@ public class BookmarkPanel extends javax.swing.JPanel {
 		                Preferences prefs = Preferences.userNodeForPackage( BookmarkPanel.class );
 		                File file = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.externalResource,
 		                                                               appCont, BookmarkPanel.this, prefs,
-		                                                               "bookmark file", IGeoFileFilter.XML );
+		                                                               "bookmark file", DesktopFileFilter.XML );
 		                FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
 		                FileSystemAccess fsa = fsaf.getFileSystemAccess( FILECHOOSERTYPE.externalResource );
 		                fsa.getFileURL( file.getAbsolutePath() );

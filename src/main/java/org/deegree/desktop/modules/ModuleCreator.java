@@ -123,7 +123,7 @@ import org.deegree.kernel.ProcessMonitor;
 import org.xml.sax.SAXException;
 
 /**
- * Factory class for creating modules from module definition stored in a iGeodesktop project files
+ * Factory class for creating modules from module definition stored in a deegreeDesktop project files
  * 
  * 
  * @author <a href="mailto:poth@lat-lon.de">Andreas Poth</a>
@@ -163,7 +163,7 @@ public class ModuleCreator<T> {
     }
 
     /**
-     * creates a module from its definition in a iGeoDesktop configuration/project file
+     * creates a module from its definition in a deegreeDesktop configuration/project file
      * 
      * @param module
      * @param componentPosition
@@ -202,7 +202,7 @@ public class ModuleCreator<T> {
     }
 
     /**
-     * creates a module group and all contained modules from its definition in a iGeoDesktop configuration/project file
+     * creates a module group and all contained modules from its definition in a deegreeDesktop configuration/project file
      * 
      * @param moduleGroup
      * @param componentPosition
@@ -263,7 +263,7 @@ public class ModuleCreator<T> {
                 }
 
                 try {
-                    JAXBContext jc = JAXBContext.newInstance( "org.deegree.igeo.config" );
+                    JAXBContext jc = JAXBContext.newInstance( "org.deegree.desktop.config" );
                     Unmarshaller u = jc.createUnmarshaller();
                     ModuleType mt = ( (JAXBElement<? extends ModuleType>) u.unmarshal( mLoc ) ).getValue();
                     processMonitor.updateStatus( "loading module: " + mt.getName() );

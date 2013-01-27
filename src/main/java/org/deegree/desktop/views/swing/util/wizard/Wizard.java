@@ -102,7 +102,7 @@ public class Wizard extends JFrame implements ActionListener {
         // text for next button will set in method checkButtons()
         next = new JButton( );
         previous = new JButton( "< " + get( "$DI10025" ) );
-        URL cancelIcon = OkCancelPanel.class.getResource( "/org/deegree/igeo/views/images/cancel.png" );
+        URL cancelIcon = OkCancelPanel.class.getResource( "/org/deegree/desktop/views/images/cancel.png" );
         cancel = new JButton( get( "$DI10002" ), new ImageIcon( cancelIcon ) );
         next.addActionListener( this );
         previous.addActionListener( this );

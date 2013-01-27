@@ -77,7 +77,7 @@ import javax.xml.stream.XMLStreamWriter;
 import org.deegree.desktop.settings.GraphicOptions;
 import org.deegree.desktop.style.model.GraphicSymbol;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
@@ -226,7 +226,7 @@ public class EditSymbollibraryPanel extends JPanel implements ActionListener {
                                                        null,
                                                        this,
                                                        preferences,
-                                                       "lastSelectSymbol", IGeoFileFilter.IMAGES );
+                                                       "lastSelectSymbol", DesktopFileFilter.IMAGES );
         if ( file != null ) {
             try {
                 newSymbolTF.setText( file.toURI().toURL().toExternalForm() );
@@ -308,7 +308,7 @@ public class EditSymbollibraryPanel extends JPanel implements ActionListener {
                                                        null,
                                                        this,
                                                        Preferences.systemNodeForPackage( EditSymbollibraryPanel.class ),
-                                                       "lastImportedSymbol", IGeoFileFilter.XML );
+                                                       "lastImportedSymbol", DesktopFileFilter.XML );
         if ( file != null ) {
             FileInputStream fis = null;
             XMLStreamReader reader = null;
@@ -371,7 +371,7 @@ public class EditSymbollibraryPanel extends JPanel implements ActionListener {
                                                            null,
                                                            this,
                                                            Preferences.systemNodeForPackage( EditSymbollibraryPanel.class ),
-                                                           "lastExportedSymbol", IGeoFileFilter.XML );
+                                                           "lastExportedSymbol", DesktopFileFilter.XML );
             if ( file != null ) {
                 FileOutputStream fos = null;
                 XMLStreamWriter writer = null;

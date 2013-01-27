@@ -73,7 +73,7 @@ import org.deegree.desktop.style.model.GraphicSymbol;
 import org.deegree.desktop.style.model.SldValues;
 import org.deegree.desktop.views.swing.style.renderer.SymbolRenderer;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 
 import com.jgoodies.forms.builder.DefaultFormBuilder;
@@ -372,7 +372,7 @@ public class FillGraphicPanel extends JPanel implements ActionListener {
             Preferences preferences = Preferences.userNodeForPackage( FillGraphicPanel.class );
             File file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.image, null, this,
                                                            preferences,
-                                                           "lastSelectGraphic", IGeoFileFilter.IMAGES );
+                                                           "lastSelectGraphic", DesktopFileFilter.IMAGES );
             if ( file != null ) {
                 try {
                     fixedGraphicFillUrlTF.setText( file.toURI().toURL().toExternalForm() );

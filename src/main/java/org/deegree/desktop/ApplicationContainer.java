@@ -225,7 +225,7 @@ public abstract class ApplicationContainer<T> {
         popupEntries = new ArrayList<PopUpEntryType>();
 
         processMonitor.updateStatus( "loading project file" );
-        JAXBContext jc = JAXBContext.newInstance( "org.deegree.igeo.config" );
+        JAXBContext jc = JAXBContext.newInstance( "org.deegree.desktop.config" );
         Unmarshaller u = jc.createUnmarshaller();
         this.proj = (Project) u.unmarshal( url );
 
@@ -326,7 +326,7 @@ public abstract class ApplicationContainer<T> {
                     String msg = Messages.getMessage( Locale.getDefault(), "$DG10043", href );
                     throw new ModuleException( msg, e );
                 }
-                JAXBContext jc2 = JAXBContext.newInstance( "org.deegree.igeo.config" );
+                JAXBContext jc2 = JAXBContext.newInstance( "org.deegree.desktop.config" );
                 Unmarshaller u2 = jc2.createUnmarshaller();
                 LOG.logDebug( "loading: ", mLoc );
                 try {
@@ -654,7 +654,7 @@ public abstract class ApplicationContainer<T> {
     /**
      * 
      * @param name
-     * @return parameter that is global available for complete time an instance of iGeoDesktop is running or it has been
+     * @return parameter that is global available for complete time an instance of deegreeDesktop is running or it has been
      *         deleted manually
      */
     public synchronized Object getInstanceSetting( String name ) {
@@ -662,7 +662,7 @@ public abstract class ApplicationContainer<T> {
     }
 
     /**
-     * sets a parameter that will be global available for complete time an instance of iGeoDesktop is running or it has
+     * sets a parameter that will be global available for complete time an instance of deegreeDesktop is running or it has
      * been deleted manually but it will not be stored
      * 
      * @param name
@@ -725,7 +725,7 @@ public abstract class ApplicationContainer<T> {
     }
 
     /**
-     * logs out current instance of igeodesktop by reseting all certificates
+     * logs out current instance of deegreeDesktop by reseting all certificates
      */
     public void logout() {
         user = null;
@@ -777,7 +777,7 @@ public abstract class ApplicationContainer<T> {
     }
 
     /**
-     * initializes iGeoDesktop
+     * initializes deegreeDesktop
      */
     public abstract void init();
 

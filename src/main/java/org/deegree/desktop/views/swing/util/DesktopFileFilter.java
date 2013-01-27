@@ -59,73 +59,73 @@ import org.deegree.framework.util.StringTools;
  * 
  * @version. $Revision$, $Date$
  */
-public class IGeoFileFilter extends FileFilter {
+public class DesktopFileFilter extends FileFilter {
     
     /**
      * 
      */
-    public static final IGeoFileFilter SHP = new IGeoFileFilter( Messages.get( "$MD10356" ), "shp" );
+    public static final DesktopFileFilter SHP = new DesktopFileFilter( Messages.get( "$MD10356" ), "shp" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter PDF = new IGeoFileFilter( Messages.get( "$MD10356" ), "pdf" );
+    public static final DesktopFileFilter PDF = new DesktopFileFilter( Messages.get( "$MD10356" ), "pdf" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter HTML = new IGeoFileFilter( Messages.get( "$MD10370" ), "htm", "html" );
+    public static final DesktopFileFilter HTML = new DesktopFileFilter( Messages.get( "$MD10370" ), "htm", "html" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter XML = new IGeoFileFilter( Messages.get( "$MD10371" ), "xml" );
+    public static final DesktopFileFilter XML = new DesktopFileFilter( Messages.get( "$MD10371" ), "xml" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter JASPER = new IGeoFileFilter( Messages.get( "$MD10371" ), "xml", "jrxml" );
+    public static final DesktopFileFilter JASPER = new DesktopFileFilter( Messages.get( "$MD10371" ), "xml", "jrxml" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter JPEG = new IGeoFileFilter( Messages.get( "$MD10372" ), "jpg", "jpeg" );
+    public static final DesktopFileFilter JPEG = new DesktopFileFilter( Messages.get( "$MD10372" ), "jpg", "jpeg" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter PNG = new IGeoFileFilter( Messages.get( "$MD10373" ), "png" );
+    public static final DesktopFileFilter PNG = new DesktopFileFilter( Messages.get( "$MD10373" ), "png" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter GPX = new IGeoFileFilter( Messages.get( "$MD10997" ), "gpx" );
+    public static final DesktopFileFilter GPX = new DesktopFileFilter( Messages.get( "$MD10997" ), "gpx" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter TIFF = new IGeoFileFilter( Messages.get( "$MD10378" ), "tif", "tiff" );
+    public static final DesktopFileFilter TIFF = new DesktopFileFilter( Messages.get( "$MD10378" ), "tif", "tiff" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter GIF = new IGeoFileFilter( Messages.get( "$MD10379" ), "gif" );
+    public static final DesktopFileFilter GIF = new DesktopFileFilter( Messages.get( "$MD10379" ), "gif" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter BMP = new IGeoFileFilter( Messages.get( "$MD10380" ), "bmp" );
+    public static final DesktopFileFilter BMP = new DesktopFileFilter( Messages.get( "$MD10380" ), "bmp" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter IMAGES = new IGeoFileFilter( Messages.get( "$MD10381" ), "jpg", "jpeg", "png",
+    public static final DesktopFileFilter IMAGES = new DesktopFileFilter( Messages.get( "$MD10381" ), "jpg", "jpeg", "png",
                                                                     "tif", "tiff", "gif", "bmp", "svg" );
 
     /**
      * 
      */
-    public static final IGeoFileFilter PRJ = new IGeoFileFilter( Messages.get( "$MD10907" ), "prj" );
+    public static final DesktopFileFilter PRJ = new DesktopFileFilter( Messages.get( "$MD10907" ), "prj" );
 
     private LinkedList<String> extensions = null;
 
@@ -159,7 +159,7 @@ public class IGeoFileFilter extends FileFilter {
      * @param type
      * @return list of {@link FileFilter}s for file formats known by iGeoDesktop
      */
-    public static List<IGeoFileFilter> createForwellKnownFormats( ApplicationContainer<Container> appContainer,
+    public static List<DesktopFileFilter> createForwellKnownFormats( ApplicationContainer<Container> appContainer,
                                                                   FILETYPE type ) {
         FileFilters ff = appContainer.getSettings().getFileFilters();
         List<String> ext = new ArrayList<String>();
@@ -181,7 +181,7 @@ public class IGeoFileFilter extends FileFilter {
                 }
             }
         }
-        return IGeoFileFilter.createForExtensions( ext.toArray( new String[ext.size()] ) );
+        return DesktopFileFilter.createForExtensions( ext.toArray( new String[ext.size()] ) );
     }
 
     /**
@@ -189,13 +189,13 @@ public class IGeoFileFilter extends FileFilter {
      * @param extensions
      * @return list of {@link FileFilter}s; one for each extension
      */
-    public static List<IGeoFileFilter> createForExtensions( String... extensions ) {
+    public static List<DesktopFileFilter> createForExtensions( String... extensions ) {
 
-        List<IGeoFileFilter> list = new ArrayList<IGeoFileFilter>( extensions.length );
+        List<DesktopFileFilter> list = new ArrayList<DesktopFileFilter>( extensions.length );
         for ( String extension : extensions ) {
             if ( extension.trim().length() > 4 ) {
                 String[] s = extension.split( ";" );
-                IGeoFileFilter cff = new IGeoFileFilter( s[0] );
+                DesktopFileFilter cff = new DesktopFileFilter( s[0] );
                 if ( s.length > 1 ) {
                     cff.setDescription( StringTools.concat( 50, "*.", s[0].toLowerCase(), " - ", s[1] ) );
                 }
@@ -211,7 +211,7 @@ public class IGeoFileFilter extends FileFilter {
      *            list of considered file extensions (e.g. tif, BMP, Gif ..) The is is not case sensitive; use '*' for
      *            returning all files
      */
-    public IGeoFileFilter( String... extensions ) {
+    public DesktopFileFilter( String... extensions ) {
         this.extensions = new LinkedList<String>();
         for ( int i = 0; i < extensions.length; i++ ) {
             this.extensions.add( extensions[i].toUpperCase() );

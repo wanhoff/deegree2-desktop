@@ -63,7 +63,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.IconRegistry;
 import org.deegree.desktop.views.swing.util.JIntField;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
@@ -173,7 +173,7 @@ public class JasperReportPanel extends JPanel {
                 final JLabel fileLabel = new JLabel( get( "$DI10023" ) );
                 panel.add( fileLabel, gb2 );
                 ++gb2.gridx;
-                Icon icon = IconRegistry.getIcon( "/org/deegree/igeo/views/images/open.gif" );
+                Icon icon = IconRegistry.getIcon( "/org/deegree/desktop/views/images/open.gif" );
                 final JButton browse = new JButton( get( "$DI10021" ), icon );
                 panel.add( browse, gb2 );
 
@@ -181,7 +181,7 @@ public class JasperReportPanel extends JPanel {
                     public void actionPerformed( ActionEvent e ) {
                         File f = showOpenDialog( FILECHOOSERTYPE.image, null, JasperReportPanel.this,
                                                  userNodeForPackage( JasperReportPanel.class ), "lastImageReportPanel",
-                                                 IGeoFileFilter.IMAGES );
+                                                 DesktopFileFilter.IMAGES );
                         if ( f != null ) {
                             try {
                                 images.put( name, read( f ) );

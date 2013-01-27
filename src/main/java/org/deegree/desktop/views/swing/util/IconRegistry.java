@@ -61,7 +61,7 @@ public class IconRegistry {
 
     private static final ILogger LOG = getLogger( IconRegistry.class );
 
-    private static final String ICONROOT = "/org/deegree/igeo/views/images/";
+    private static final String ICONROOT = "/org/deegree/desktop/views/images/";
 
     private static Map<String, Icon> iconMap;
     static {
@@ -73,11 +73,11 @@ public class IconRegistry {
     /**
      * returns an icon for a name. If a icon with passed name is not available within the registy first it will be
      * looked if the name is an absolute reference (starting with '/'). If so it will be loaded using
-     * <code>IconRegistry.class.getResource( name )</code>. If not icon root path (/org/deegree/igeo/views/images/) will
+     * <code>IconRegistry.class.getResource( name )</code>. If not icon root path (/org/deegree/desktop/views/images/) will
      * be added and loadin will be trieed again.
      * 
      * @param name
-     *            e.g. "layer.gif" or "/org/deegree/igeo/views/images/add.gif"
+     *            e.g. "layer.gif" or "/org/deegree/desktop/views/images/add.gif"
      * @return {@link ImageIcon}
      */
     public static Icon getIcon( String name ) {

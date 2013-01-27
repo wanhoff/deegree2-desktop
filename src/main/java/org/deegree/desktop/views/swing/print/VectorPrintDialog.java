@@ -98,7 +98,7 @@ import org.deegree.desktop.views.swing.ButtonGroup;
 import org.deegree.desktop.views.swing.HelpFrame;
 import org.deegree.desktop.views.swing.map.LayerComponent;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.IconRegistry;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
@@ -808,7 +808,7 @@ public class VectorPrintDialog extends javax.swing.JDialog implements org.deegre
                                                                                    appContainer,
                                                                                    VectorPrintDialog.this, prefs,
                                                                                    "print definition",
-                                                                                   IGeoFileFilter.PDF );
+                                                                                   DesktopFileFilter.PDF );
                                     tfOutputFile.setText( file.getAbsolutePath() );
                                 }
                             } );
@@ -944,7 +944,7 @@ public class VectorPrintDialog extends javax.swing.JDialog implements org.deegre
     private void doSaveSettings() {
         Preferences prefs = Preferences.userNodeForPackage( VectorPrintDialog.class );
         File file = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.externalResource, appContainer, this, prefs,
-                                                       "print definition", IGeoFileFilter.XML );
+                                                       "print definition", DesktopFileFilter.XML );
         if ( file == null ) {
             // cancel has been pressed
             return;
@@ -1051,7 +1051,7 @@ public class VectorPrintDialog extends javax.swing.JDialog implements org.deegre
     private void doLoadSettings() {
         Preferences prefs = Preferences.userNodeForPackage( VectorPrintDialog.class );
         File file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.externalResource, appContainer, this, prefs,
-                                                       "print definition", IGeoFileFilter.XML );
+                                                       "print definition", DesktopFileFilter.XML );
         if ( file == null ) {
             // cancel has been pressed
             return;

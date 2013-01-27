@@ -80,7 +80,7 @@ import org.deegree.desktop.views.DialogFactory;
 import org.deegree.desktop.views.swing.print.PrintOptionsPanel.Scale;
 import org.deegree.desktop.views.swing.print.SelectTemplatePanel.Template;
 import org.deegree.desktop.views.swing.util.GuiUtils;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.wizard.MiscActions;
 import org.deegree.desktop.views.swing.util.wizard.MiscActions.EmptyAction;
 import org.deegree.desktop.views.swing.util.wizard.Wizard.Action;
@@ -261,21 +261,21 @@ public class PrintActions {
                     }
                     JasperPrint print = fillReport( jasperReport, parameters, new JREmptyDataSource() );
 
-                    if ( IGeoFileFilter.PDF.accept( options.file ) ) {
+                    if ( DesktopFileFilter.PDF.accept( options.file ) ) {
                         JasperExportManager.exportReportToPdfFile( print, options.file.toString() );
                     }
-                    if ( IGeoFileFilter.HTML.accept( options.file ) ) {
+                    if ( DesktopFileFilter.HTML.accept( options.file ) ) {
                         JasperExportManager.exportReportToHtmlFile( print, options.file.toString() );
                     }
-                    if ( IGeoFileFilter.XML.accept( options.file ) ) {
+                    if ( DesktopFileFilter.XML.accept( options.file ) ) {
                         JasperExportManager.exportReportToXmlFile( print, options.file.toString(), true );
                     }
-                    if ( IGeoFileFilter.JPEG.accept( options.file ) || IGeoFileFilter.PNG.accept( options.file ) ) {
+                    if ( DesktopFileFilter.JPEG.accept( options.file ) || DesktopFileFilter.PNG.accept( options.file ) ) {
                         Image result = printPageToImage( print, 0, 1 );
-                        if ( IGeoFileFilter.JPEG.accept( options.file ) ) {
+                        if ( DesktopFileFilter.JPEG.accept( options.file ) ) {
                             write( (RenderedImage) result, "jpg", options.file );
                         }
-                        if ( IGeoFileFilter.PNG.accept( options.file ) ) {
+                        if ( DesktopFileFilter.PNG.accept( options.file ) ) {
                             write( (RenderedImage) result, "png", options.file );
                         }
                     }

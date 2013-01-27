@@ -172,8 +172,8 @@ public class SldValues {
             DecimalFormat df = new DecimalFormat( "000" );
             for ( int i = 0; i < 500; i++ ) {
                 String s = df.format( i );
-                URL fpURL = SldValues.class.getResource( "/org/deegree/igeo/style/model/fillpattern/" + s + ".png" );
-                InputStream is = SldValues.class.getResourceAsStream( "/org/deegree/igeo/style/model/fillpattern/" + s
+                URL fpURL = SldValues.class.getResource( "/org/deegree/desktop/style/model/fillpattern/" + s + ".png" );
+                InputStream is = SldValues.class.getResourceAsStream( "/org/deegree/desktop/style/model/fillpattern/" + s
                                                                       + ".png" );
                 if ( is != null ) {
                     is.close();

@@ -90,12 +90,12 @@ public class OkCancelPanel extends JPanel {
         gb.insets = new Insets( 2, 2, 2, 2 );
         gb.gridx = 0;
         gb.gridy = 0;
-        URL okIcon = OkCancelPanel.class.getResource( "/org/deegree/igeo/views/images/accept.png" );
+        URL okIcon = OkCancelPanel.class.getResource( "/org/deegree/desktop/views/images/accept.png" );
         okButton = new JButton( get( "$DI10001" ), new ImageIcon( okIcon ) );
         okButton.addActionListener( listener );
         add( okButton, gb );
         if ( cancel ) {
-            URL cancelIcon = OkCancelPanel.class.getResource( "/org/deegree/igeo/views/images/cancel.png" );
+            URL cancelIcon = OkCancelPanel.class.getResource( "/org/deegree/desktop/views/images/cancel.png" );
             cancelButton = new JButton( get( "$DI10002" ), new ImageIcon( cancelIcon ) );
             cancelButton.addActionListener( listener );
             ++gb.gridx;

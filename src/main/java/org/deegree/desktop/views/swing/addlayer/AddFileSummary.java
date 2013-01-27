@@ -77,7 +77,7 @@ import org.deegree.desktop.modules.IModule;
 import org.deegree.desktop.views.swing.AutoCompleteComboBox;
 import org.deegree.desktop.views.swing.ScaleDenominatorPanel;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.utils.CRSUtils;
 import org.deegree.framework.utils.SwingUtils;
@@ -163,11 +163,11 @@ public class AddFileSummary extends WizardDialog implements ActionListener {
      */
     private void chooseFile() {
 
-        List<IGeoFileFilter> ff = null;
+        List<DesktopFileFilter> ff = null;
         if ( datasourceName.equals( AddLayerFrame.FILE_RASTER ) ) {
-            ff = IGeoFileFilter.createForwellKnownFormats( appContainer, IGeoFileFilter.FILETYPE.raster );
+            ff = DesktopFileFilter.createForwellKnownFormats( appContainer, DesktopFileFilter.FILETYPE.raster );
         } else {
-            ff = IGeoFileFilter.createForwellKnownFormats( appContainer, IGeoFileFilter.FILETYPE.vector );
+            ff = DesktopFileFilter.createForwellKnownFormats( appContainer, DesktopFileFilter.FILETYPE.vector );
         }
         Preferences prefs = Preferences.userNodeForPackage( AddFileSummary.class );
         file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.geoDataFile, appContainer, this, prefs, "layerFile",

@@ -66,7 +66,7 @@ import javax.swing.event.DocumentListener;
 
 import org.deegree.desktop.ApplicationContainer;
 import org.deegree.desktop.views.swing.util.GuiUtils;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.IconRegistry;
 import org.deegree.desktop.views.swing.util.JIntField;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
@@ -210,8 +210,8 @@ public class PrintOptionsPanel extends JPanel implements DocumentListener, Actio
     public void actionPerformed( ActionEvent e ) {
         Preferences prefs = userNodeForPackage( PrintOptionsPanel.class );
         File f = showSaveDialog( new File( fileField.getText() ), FILECHOOSERTYPE.printResult, appCont, this, prefs,
-                                 "outputdir", IGeoFileFilter.XML, IGeoFileFilter.JPEG, IGeoFileFilter.PNG,
-                                 IGeoFileFilter.HTML, IGeoFileFilter.PDF );
+                                 "outputdir", DesktopFileFilter.XML, DesktopFileFilter.JPEG, DesktopFileFilter.PNG,
+                                 DesktopFileFilter.HTML, DesktopFileFilter.PDF );
         if ( f != null ) {
             fileField.setText( f.toString() );
             file = f;

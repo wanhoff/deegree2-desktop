@@ -79,7 +79,7 @@ import org.deegree.desktop.io.FileSystemAccessFactory;
 import org.deegree.desktop.views.DialogFactory;
 import org.deegree.desktop.views.swing.AutoCompleteComboBox;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.IconRegistry;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.file.FileMemory;
@@ -359,7 +359,7 @@ class NewProjectSelectionDialog extends javax.swing.JDialog {
                 Preferences prefs = Preferences.userNodeForPackage( ApplicationContainer.class );
                 File file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.project, appCont,
                                                                NewProjectSelectionDialog.this, prefs, "projectFile",
-                                                               IGeoFileFilter.PRJ );
+                                                               DesktopFileFilter.PRJ );
 
                 if ( file != null ) {
                     FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );

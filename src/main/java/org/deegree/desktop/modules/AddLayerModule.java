@@ -51,9 +51,9 @@ import org.deegree.desktop.main.DeegreeDesktop;
 import org.deegree.desktop.mapmodel.MapModel;
 import org.deegree.desktop.modules.ActionDescription.ACTIONTYPE;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter.FILETYPE;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter.FILETYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
 import org.deegree.kernel.CommandProcessedEvent;
@@ -109,7 +109,7 @@ public class AddLayerModule<T> extends DefaultModule<T> {
         File file = null;
         if ( "Application".equalsIgnoreCase( appContainer.getViewPlatform() ) ) {
             Preferences prefs = Preferences.userNodeForPackage( AddLayerModule.class );
-            List<IGeoFileFilter> ff = IGeoFileFilter.createForwellKnownFormats(
+            List<DesktopFileFilter> ff = DesktopFileFilter.createForwellKnownFormats(
                                                                                 (ApplicationContainer<Container>) appContainer,
                                                                                 FILETYPE.any );
             file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.geoDataFile, appContainer,

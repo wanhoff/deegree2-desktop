@@ -164,10 +164,10 @@ public class StyleDialog extends JFrame implements ActionListener, WindowListene
     public void setTypePanelIcon( VisualPropertyPanel panelToSetIcon, boolean isActive ) {
         ImageIcon icon;
         if ( isActive ) {
-            URL active = StyleDialog.class.getResource( "/org/deegree/igeo/views/images/flag_green.png" );
+            URL active = StyleDialog.class.getResource( "/org/deegree/desktop/views/images/flag_green.png" );
             icon = new ImageIcon( active );
         } else {
-            URL inactive = StyleDialog.class.getResource( "/org/deegree/igeo/views/images/flag_red.png" );
+            URL inactive = StyleDialog.class.getResource( "/org/deegree/desktop/views/images/flag_red.png" );
             icon = new ImageIcon( inactive );
         }
         int index = Integer.MIN_VALUE;

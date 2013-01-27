@@ -584,7 +584,7 @@ public class DeegreeDesktop extends AbstractDeegreeDesktop {
             JMenu menu = new JMenu( Messages.getMessage( frame.getLocale(), "$DI10053" ) );
             menu.setMnemonic( KeyEvent.VK_H );
             JMenuItem item = new JMenuItem( Messages.getMessage( frame.getLocale(), "$DI10054" ) );
-            addIcon( "/org/deegree/igeo/views/images/help.png", item, 15 );
+            addIcon( "/org/deegree/desktop/views/images/help.png", item, 15 );
             item.setName( "iGeoDesktop:open help" );
             item.addActionListener( this );
             item.setAccelerator( KeyStroke.getKeyStroke( KeyEvent.VK_F1, 0 ) );
@@ -713,15 +713,15 @@ public class DeegreeDesktop extends AbstractDeegreeDesktop {
                             item = new JMenuItem( title );
                         } else if ( menuItem.getEntryType() == EntryValueType.RADIO_BUTTON_ITEM ) {
                             item = new JRadioButtonMenuItem( title );
-                            URL url = PopUpRegister.class.getResource( "/org/deegree/igeo/views/images/radiobutton_unselected.gif" );
+                            URL url = PopUpRegister.class.getResource( "/org/deegree/desktop/views/images/radiobutton_unselected.gif" );
                             item.setIcon( new ImageIcon( url ) );
-                            url = PopUpRegister.class.getResource( "/org/deegree/igeo/views/images/radiobutton_selected.gif" );
+                            url = PopUpRegister.class.getResource( "/org/deegree/desktop/views/images/radiobutton_selected.gif" );
                             item.setSelectedIcon( new ImageIcon( url ) );
                         } else if ( menuItem.getEntryType() == EntryValueType.CHECK_BOX_ITEM ) {
                             item = new JCheckBoxMenuItem( title );
-                            URL url = PopUpRegister.class.getResource( "/org/deegree/igeo/views/images/checkbox_unselected.gif" );
+                            URL url = PopUpRegister.class.getResource( "/org/deegree/desktop/views/images/checkbox_unselected.gif" );
                             item.setIcon( new ImageIcon( url ) );
-                            url = PopUpRegister.class.getResource( "/org/deegree/igeo/views/images/checkbox_selected.gif" );
+                            url = PopUpRegister.class.getResource( "/org/deegree/desktop/views/images/checkbox_selected.gif" );
                             item.setSelectedIcon( new ImageIcon( url ) );
                         } else {
                         	// item is null.

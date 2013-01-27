@@ -84,7 +84,7 @@ public class GenericFileChooser {
      */
     public static File showSaveDialog( File defaultFile, FILECHOOSERTYPE fileChooserType,
                                        ApplicationContainer<?> appCont, Component parent, Preferences prefs,
-                                       String key, IGeoFileFilter... types ) {
+                                       String key, DesktopFileFilter... types ) {
         FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
         FileSystemAccess fsa;
         try {
@@ -104,7 +104,7 @@ public class GenericFileChooser {
             if ( defaultFile != null ) {
                 chooser.setSelectedFile( defaultFile );
             }
-            for ( IGeoFileFilter f : types ) {
+            for ( DesktopFileFilter f : types ) {
                 chooser.addChoosableFileFilter( f );
             }
             return approveSave( parent, prefs, key, chooser );
@@ -124,7 +124,7 @@ public class GenericFileChooser {
      * @return null, if none was chosen
      */
     public static File showSaveDialog( FILECHOOSERTYPE fileChooserType, ApplicationContainer<?> appCont,
-                                       Component parent, Preferences prefs, String key, IGeoFileFilter... types ) {
+                                       Component parent, Preferences prefs, String key, DesktopFileFilter... types ) {
         return showSaveDialog( null, fileChooserType, appCont, parent, prefs, key, types );
     }
 
@@ -139,7 +139,7 @@ public class GenericFileChooser {
      * @return null, if none was chosen
      */
     public static File showSaveDialog( FILECHOOSERTYPE fileChooserType, ApplicationContainer<?> appCont,
-                                       Component parent, Preferences prefs, String key, List<IGeoFileFilter> types ) {
+                                       Component parent, Preferences prefs, String key, List<DesktopFileFilter> types ) {
         FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
         FileSystemAccess fsa;
         try {
@@ -156,7 +156,7 @@ public class GenericFileChooser {
             }
         } else {
             JFileChooser chooser = new JFileChooser( prefs.get( key, null ) );
-            for ( IGeoFileFilter f : types ) {
+            for ( DesktopFileFilter f : types ) {
                 chooser.addChoosableFileFilter( f );
             }
             return approveSave( parent, prefs, key, chooser );
@@ -175,7 +175,7 @@ public class GenericFileChooser {
      * @return null, if none was chosen/cancel clicked
      */
     public static File showOpenDialog( FILECHOOSERTYPE fileChooserType, ApplicationContainer<?> appCont,
-                                       Component parent, Preferences prefs, String key, IGeoFileFilter... types ) {
+                                       Component parent, Preferences prefs, String key, DesktopFileFilter... types ) {
         FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
         FileSystemAccess fsa;
         try {
@@ -191,7 +191,7 @@ public class GenericFileChooser {
             }
         } else {
             JFileChooser chooser = new JFileChooser( prefs.get( key, null ) );
-            for ( IGeoFileFilter f : types ) {
+            for ( DesktopFileFilter f : types ) {
                 chooser.addChoosableFileFilter( f );
             }
             return approveOpen( parent, prefs, key, chooser );
@@ -210,7 +210,7 @@ public class GenericFileChooser {
      * @return null, if none was chosen/cancel clicked
      */
     public static File showOpenDialog( FILECHOOSERTYPE fileChooserType, ApplicationContainer<?> appCont,
-                                       Component parent, Preferences prefs, String key, List<IGeoFileFilter> types ) {
+                                       Component parent, Preferences prefs, String key, List<DesktopFileFilter> types ) {
         FileSystemAccessFactory fsaf = FileSystemAccessFactory.getInstance( appCont );
         FileSystemAccess fsa;
         try {
@@ -226,7 +226,7 @@ public class GenericFileChooser {
             }
         } else {
             JFileChooser chooser = new JFileChooser( prefs.get( key, null ) );
-            for ( IGeoFileFilter f : types ) {
+            for ( DesktopFileFilter f : types ) {
                 chooser.addChoosableFileFilter( f );
             }
             return approveOpen( parent, prefs, key, chooser );
@@ -239,8 +239,8 @@ public class GenericFileChooser {
         if ( chooser.showOpenDialog( parent ) == APPROVE_OPTION ) {
             prefs.put( key, chooser.getCurrentDirectory().getAbsoluteFile().toString() );
             File f = chooser.getSelectedFile();
-            if ( chooser.getFileFilter() instanceof IGeoFileFilter ) {
-                IGeoFileFilter filter = (IGeoFileFilter) chooser.getFileFilter();
+            if ( chooser.getFileFilter() instanceof DesktopFileFilter ) {
+                DesktopFileFilter filter = (DesktopFileFilter) chooser.getFileFilter();
                 f = filter.updateFile( f );
             }
             if ( !f.exists() ) {
@@ -255,8 +255,8 @@ public class GenericFileChooser {
         if ( chooser.showSaveDialog( parent ) == APPROVE_OPTION ) {
             prefs.put( key, chooser.getCurrentDirectory().getAbsoluteFile().toString() );
             File f = chooser.getSelectedFile();
-            if ( chooser.getFileFilter() instanceof IGeoFileFilter ) {
-                IGeoFileFilter filter = (IGeoFileFilter) chooser.getFileFilter();
+            if ( chooser.getFileFilter() instanceof DesktopFileFilter ) {
+                DesktopFileFilter filter = (DesktopFileFilter) chooser.getFileFilter();
                 f = filter.updateFile( f );
             }
             if ( f.exists()
@@ -270,9 +270,9 @@ public class GenericFileChooser {
         return null;
     }
 
-    private static LinkedList<String> getExtensions( IGeoFileFilter... types ) {
+    private static LinkedList<String> getExtensions( DesktopFileFilter... types ) {
         LinkedList<String> ext = new LinkedList<String>();
-        for ( IGeoFileFilter f : types ) {
+        for ( DesktopFileFilter f : types ) {
             ext = f.getExtensions();
         }
         if ( ext.size() == 0 ) {
@@ -282,9 +282,9 @@ public class GenericFileChooser {
         return ext;
     }
 
-    private static LinkedList<String> getExtensions( List<IGeoFileFilter> types ) {
+    private static LinkedList<String> getExtensions( List<DesktopFileFilter> types ) {
         LinkedList<String> ext = new LinkedList<String>();
-        for ( IGeoFileFilter f : types ) {
+        for ( DesktopFileFilter f : types ) {
             // TODO
             // ext = f.getExtensions();
         }

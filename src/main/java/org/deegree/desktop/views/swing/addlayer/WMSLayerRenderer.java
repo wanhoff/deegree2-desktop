@@ -69,11 +69,11 @@ public class WMSLayerRenderer extends DefaultTreeCellRenderer {
 
             Layer layerEntry = (Layer) node.getUserObject();
 
-            String icon = "/org/deegree/igeo/views/images/status1.gif";
+            String icon = "/org/deegree/desktop/views/images/status1.gif";
             if ( layerEntry.getName() == null || !( layerEntry.getName().length() > 0 ) ) {
-                icon = "/org/deegree/igeo/views/images/status3.gif";
+                icon = "/org/deegree/desktop/views/images/status3.gif";
             } else if ( !layerEntry.isQueryable() ) {
-                icon = "/org/deegree/igeo/views/images/status2.gif";
+                icon = "/org/deegree/desktop/views/images/status2.gif";
             }
             
             setIcon( IconRegistry.getIcon( icon ) );

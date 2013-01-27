@@ -56,7 +56,7 @@ import javax.swing.TransferHandler;
 
 import org.deegree.desktop.modules.ActionDescription.ACTIONTYPE;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
@@ -92,8 +92,8 @@ public class LegendModule<T> extends DefaultModule<T> {
     public void exportAsImage() {
         Preferences prefs = userNodeForPackage( LegendModule.class );
         File f = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.printResult, appContainer, null, prefs,
-                                                    "outputdir", IGeoFileFilter.JPEG, IGeoFileFilter.PNG,
-                                                    IGeoFileFilter.BMP );
+                                                    "outputdir", DesktopFileFilter.JPEG, DesktopFileFilter.PNG,
+                                                    DesktopFileFilter.BMP );
 
         if ( f != null ) {
             BufferedImage img;

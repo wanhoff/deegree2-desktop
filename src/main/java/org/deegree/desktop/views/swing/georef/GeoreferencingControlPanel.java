@@ -93,7 +93,7 @@ import org.deegree.desktop.modules.georef.ControlPointModel;
 import org.deegree.desktop.views.swing.ButtonGroup;
 import org.deegree.desktop.views.swing.map.DefaultMapComponent;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.graphics.sld.SLDFactory;
 import org.deegree.graphics.sld.StyledLayerDescriptor;
@@ -342,8 +342,8 @@ public class GeoreferencingControlPanel extends JPanel implements ActionListener
         ApplicationContainer<?> appContainer = rightModule.getApplicationContainer();
         File file = null;
         Preferences prefs = Preferences.userNodeForPackage( GeoreferencingControlPanel.class );
-        List<IGeoFileFilter> ff = new ArrayList<IGeoFileFilter>();
-        ff.add( new IGeoFileFilter( "csv", "pkt", "pas" ) );
+        List<DesktopFileFilter> ff = new ArrayList<DesktopFileFilter>();
+        ff.add( new DesktopFileFilter( "csv", "pkt", "pas" ) );
         file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.externalResource, appContainer,
                                                   ( (DeegreeDesktop) appContainer ).getMainWndow(), prefs, "georefCsv", ff );
 
@@ -363,8 +363,8 @@ public class GeoreferencingControlPanel extends JPanel implements ActionListener
         ApplicationContainer<?> appContainer = rightModule.getApplicationContainer();
         File file = null;
         Preferences prefs = Preferences.userNodeForPackage( GeoreferencingControlPanel.class );
-        List<IGeoFileFilter> ff = new ArrayList<IGeoFileFilter>();
-        ff.add( new IGeoFileFilter( "csv", "pkt", "pas" ) );
+        List<DesktopFileFilter> ff = new ArrayList<DesktopFileFilter>();
+        ff.add( new DesktopFileFilter( "csv", "pkt", "pas" ) );
         file = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.geoDataFile, appContainer,
                                                   ( (DeegreeDesktop) appContainer ).getMainWndow(), prefs, "georefCsv", ff );
 
@@ -434,10 +434,10 @@ public class GeoreferencingControlPanel extends JPanel implements ActionListener
         File file = null;
         if ( "Application".equalsIgnoreCase( appContainer.getViewPlatform() ) ) {
             Preferences prefs = Preferences.userNodeForPackage( GeoreferencingControlPanel.class );
-            List<IGeoFileFilter> ff = new ArrayList<IGeoFileFilter>();
+            List<DesktopFileFilter> ff = new ArrayList<DesktopFileFilter>();
 
-            ff.add( IGeoFileFilter.TIFF );
-            ff.add( IGeoFileFilter.PNG );
+            ff.add( DesktopFileFilter.TIFF );
+            ff.add( DesktopFileFilter.PNG );
 
             file = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.geoDataFile, appContainer,
                                                       ( (DeegreeDesktop) appContainer ).getMainWndow(), prefs,
@@ -504,10 +504,10 @@ public class GeoreferencingControlPanel extends JPanel implements ActionListener
         File file = null;
         if ( "Application".equalsIgnoreCase( appContainer.getViewPlatform() ) ) {
             Preferences prefs = Preferences.userNodeForPackage( GeoreferencingControlPanel.class );
-            List<IGeoFileFilter> ff = new ArrayList<IGeoFileFilter>();
+            List<DesktopFileFilter> ff = new ArrayList<DesktopFileFilter>();
 
-            ff.add( IGeoFileFilter.TIFF );
-            ff.add( IGeoFileFilter.PNG );
+            ff.add( DesktopFileFilter.TIFF );
+            ff.add( DesktopFileFilter.PNG );
 
             file = GenericFileChooser.showOpenDialog( FILECHOOSERTYPE.geoDataFile, appContainer,
                                                       ( (DeegreeDesktop) appContainer ).getMainWndow(), prefs,

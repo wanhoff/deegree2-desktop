@@ -52,7 +52,7 @@ import org.deegree.framework.util.TimeTools;
  * 
  * @version $Revision$, $Date$
  */
-public class IGeoDesktopAppender extends ConsoleAppender {
+public class DeegreeDesktopAppender extends ConsoleAppender {
     
     private static List<String> messages = Collections.synchronizedList( new ArrayList<String>(100) );
     private static LoggerWindow lw = new LoggerWindow();

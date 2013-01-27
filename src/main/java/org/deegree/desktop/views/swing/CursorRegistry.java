@@ -74,7 +74,7 @@ public class CursorRegistry {
     public final static Cursor RULER_CURSOR;
     static {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        URL url = CursorRegistry.class.getResource( "/org/deegree/igeo/views/images/rulercursor.gif" );
+        URL url = CursorRegistry.class.getResource( "/org/deegree/desktop/views/images/rulercursor.gif" );
         Image rulerImage = null;
         try {
             rulerImage = ImageIO.read( url );

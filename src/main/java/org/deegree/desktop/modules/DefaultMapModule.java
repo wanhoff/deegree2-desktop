@@ -108,7 +108,7 @@ import org.deegree.desktop.views.swing.map.SelectByAttributeDialog;
 import org.deegree.desktop.views.swing.map.SelectPanel;
 import org.deegree.desktop.views.swing.map.ZoomPanel;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.framework.log.ILogger;
 import org.deegree.framework.log.LoggerFactory;
@@ -594,13 +594,13 @@ public class DefaultMapModule<T> extends DefaultModule<T> implements CommandProc
             List<Layer> layers = mapModel.getLayersSelectedForAction( MapModel.SELECTION_ACTION );
             if ( "Application".equals( appContainer.getViewPlatform() ) ) {
                 if ( layers.size() > 0 ) {
-                    List<IGeoFileFilter> cff = null;
+                    List<DesktopFileFilter> cff = null;
                     if ( layers.get( 0 ).getDataAccess().get( 0 ) instanceof FeatureAdapter ) {
-                        cff = IGeoFileFilter.createForwellKnownFormats( (ApplicationContainer<Container>) appContainer,
-                                                                        IGeoFileFilter.FILETYPE.vector );
+                        cff = DesktopFileFilter.createForwellKnownFormats( (ApplicationContainer<Container>) appContainer,
+                                                                        DesktopFileFilter.FILETYPE.vector );
                     } else {
-                        cff = IGeoFileFilter.createForwellKnownFormats( (ApplicationContainer<Container>) appContainer,
-                                                                        IGeoFileFilter.FILETYPE.raster );
+                        cff = DesktopFileFilter.createForwellKnownFormats( (ApplicationContainer<Container>) appContainer,
+                                                                        DesktopFileFilter.FILETYPE.raster );
                     }
 
                     Preferences prefs = Preferences.userNodeForPackage( DefaultMapModule.class );
@@ -933,8 +933,8 @@ public class DefaultMapModule<T> extends DefaultModule<T> implements CommandProc
 
             Preferences prefs = userNodeForPackage( DefaultMapModule.class );
             File f = GenericFileChooser.showSaveDialog( FILECHOOSERTYPE.printResult, appContainer, null, prefs,
-                                                        "outputdir", IGeoFileFilter.JPEG, IGeoFileFilter.PNG,
-                                                        IGeoFileFilter.BMP );
+                                                        "outputdir", DesktopFileFilter.JPEG, DesktopFileFilter.PNG,
+                                                        DesktopFileFilter.BMP );
 
             if ( f != null ) {
                 BufferedImage img;

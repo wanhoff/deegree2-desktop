@@ -58,7 +58,7 @@ import org.deegree.desktop.dataadapter.LinkedTable;
 import org.deegree.desktop.i18n.Messages;
 import org.deegree.desktop.views.DialogFactory;
 import org.deegree.desktop.views.swing.util.GenericFileChooser;
-import org.deegree.desktop.views.swing.util.IGeoFileFilter;
+import org.deegree.desktop.views.swing.util.DesktopFileFilter;
 import org.deegree.desktop.views.swing.util.GenericFileChooser.FILECHOOSERTYPE;
 import org.deegree.desktop.config.LinkedFileTableType;
 
@@ -130,7 +130,7 @@ class FileSelectPanel extends AbstractLinkedDataPanel {
                                                                            FileSelectPanel.this,
                                                                            Preferences.systemNodeForPackage( FileSelectPanel.class ),
                                                                            "LOCATION",
-                                                                           IGeoFileFilter.createForExtensions() );
+                                                                           DesktopFileFilter.createForExtensions() );
                             if ( file != null ) {
                                 tfFileName.setText( file.getAbsolutePath() );
                             }

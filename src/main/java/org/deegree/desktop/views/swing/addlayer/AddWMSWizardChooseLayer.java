@@ -198,21 +198,21 @@ public class AddWMSWizardChooseLayer extends WizardDialog implements TreeSelecti
 
         // the buttons to select/deselect layers
         Dimension selectBtDim = new Dimension( 55, 25 );
-        selectSelected = new JButton( IconRegistry.getIcon( "/org/deegree/igeo/views/images/for_green.png" ) );
+        selectSelected = new JButton( IconRegistry.getIcon( "/org/deegree/desktop/views/images/for_green.png" ) );
         selectSelected.setName( SEL_SELECTED_BT );
         selectSelected.addActionListener( this );
         selectSelected.setEnabled( false );
         selectSelected.setPreferredSize( selectBtDim );
-        JButton selectAll = new JButton( IconRegistry.getIcon( "/org/deegree/igeo/views/images/forward_green.png" ) );
+        JButton selectAll = new JButton( IconRegistry.getIcon( "/org/deegree/desktop/views/images/forward_green.png" ) );
         selectAll.setName( SEL_ALL_BT );
         selectAll.addActionListener( this );
         selectAll.setPreferredSize( selectBtDim );
-        deselectAll = new JButton( IconRegistry.getIcon( "/org/deegree/igeo/views/images/backward_green.png" ) );
+        deselectAll = new JButton( IconRegistry.getIcon( "/org/deegree/desktop/views/images/backward_green.png" ) );
         deselectAll.setName( DESEL_ALL_BT );
         deselectAll.addActionListener( this );
         deselectAll.setEnabled( false );
         deselectAll.setPreferredSize( selectBtDim );
-        deselectSelected = new JButton( IconRegistry.getIcon( "/org/deegree/igeo/views/images/back_green.png" ) );
+        deselectSelected = new JButton( IconRegistry.getIcon( "/org/deegree/desktop/views/images/back_green.png" ) );
         deselectSelected.setName( DESEL_SELECTED_BT );
         deselectSelected.addActionListener( this );
         deselectSelected.setEnabled( false );
@@ -249,7 +249,7 @@ public class AddWMSWizardChooseLayer extends WizardDialog implements TreeSelecti
 
         // the buttons to change the order of the layers
         Dimension orderBtDim = new Dimension( 30, 50 );
-        ImageIcon iconUp = new ImageIcon( this.getClass().getResource( "/org/deegree/igeo/views/images/arrow_up.png" ) );
+        ImageIcon iconUp = new ImageIcon( this.getClass().getResource( "/org/deegree/desktop/views/images/arrow_up.png" ) );
         layerUp = new JButton( iconUp );
         layerUp.setName( UP_BT );
         layerUp.setPreferredSize( orderBtDim );
@@ -258,7 +258,7 @@ public class AddWMSWizardChooseLayer extends WizardDialog implements TreeSelecti
 
         ImageIcon iconDown = new ImageIcon(
                                             this.getClass().getResource(
-                                                                         "/org/deegree/igeo/views/images/arrow_down.png" ) );
+                                                                         "/org/deegree/desktop/views/images/arrow_down.png" ) );
         layerDown = new JButton( iconDown );
         layerDown.setName( DOWN_BT );
         layerDown.setPreferredSize( orderBtDim );

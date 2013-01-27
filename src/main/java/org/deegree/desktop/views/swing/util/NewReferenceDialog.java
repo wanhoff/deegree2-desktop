@@ -137,7 +137,7 @@ public class NewReferenceDialog extends JDialog {
                                                                                  NewReferenceDialog.this,
                                                                                  prefs,
                                                                                  "*",
-                                                                                 IGeoFileFilter.createForExtensions( "*" ) );
+                                                                                 DesktopFileFilter.createForExtensions( "*" ) );
                             if ( file != null ) {
                                 tfURL.setText( file.getAbsolutePath() );
                             }
