@@ -415,7 +415,6 @@ public class DeegreeDesktop extends AbstractDeegreeDesktop {
         // initialize new list for tool bar and menu buttons
         toolbarButtons = new HashMap<String, List<AbstractButton>>();
         menuItems = new HashMap<String, AbstractButton>();
-        System.gc();
     }
 
     @Override
