@@ -71,6 +71,13 @@
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>1.7</version>
@@ -277,7 +284,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>appassembler-maven-plugin</artifactId>
-            <version>1.1.1</version>
+            <version>1.5</version>
             <executions>
               <execution>
                 <phase>package</phase>
@@ -544,7 +551,7 @@
       <version>2.6-pre1</version>
     </dependency>
     <!-- the source for this specific 'release' can be found at https://github.com/hwbllmnn/GeoRegression/tags (it's the 
-      deegreedesktop1 tag) -->
+    deegreedesktop1 tag) -->
     <dependency>
       <groupId>org.georegression</groupId>
       <artifactId>georegression</artifactId>
